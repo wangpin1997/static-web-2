@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
 
-    <title>Video.js | HTML5 Video Player</title>
-    <!-- <link href="video-js-6.2.0/video-js.css" rel="stylesheet">
-    <script src="video-js-6.2.0/videojs-ie8.min.js"></script> -->
+	<head>
+		<meta charset="UTF-8">
+		<title>ckplayer</title>
+		
+		<style type="text/css">body{margin:0;padding:0px;font-family:"Microsoft YaHei",YaHei,"微软雅黑",SimHei,"黑体";font-size:14px}</style>
 
-    <link href="http://vjs.zencdn.net/5.20.1/video-js.css" rel="stylesheet">
-     <script src="http://vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js"></script>
-    
-</head>
-<body>
+	</head>
 
-  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="auto" width="1280" height="720" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
-    <!-- <source src="1.mp4" type="video/mp4"> -->
-    <source src="rtmp://120.79.160.65/live/wpin" type="rtmp/flv">
-    
-    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-  </video>
-  
-  <script src="http://vjs.zencdn.net/5.20.1/video.js"></script>
-</body>
+	<body>
+		<div id="video" style="width: 600px; height: 400px;"></div>
+		<script type="text/javascript" src="./ckplayer.js"></script>
+		<script type="text/javascript">
+			var videoObject = {
+				container: '#video', //容器的ID或className
+				variable: 'player',//播放函数名称
+				autoplay:false,
+				live:true,
+				video: 'rtmp://120.79.160.65/live/wpin'
+			};
+			var player = new ckplayer(videoObject);
+		</script>
+	</body>
 
 </html>
